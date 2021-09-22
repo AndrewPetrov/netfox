@@ -127,7 +127,7 @@ class NFXListCell: UITableViewCell
         setStatus(obj.responseStatus ?? 999)
         setTimeInterval(obj.timeInterval ?? 999)
         setRequestTime(obj.requestTime ?? "-")
-        setType(obj.responseType ?? "-")
+        setType(obj.requestHeaders?["Action"] as? String ?? obj.responseType ?? "-")
         setMethod(obj.requestMethod ?? "-")
         isNewBasedOnDate(obj.responseDate as Date? ?? Date())
     }
